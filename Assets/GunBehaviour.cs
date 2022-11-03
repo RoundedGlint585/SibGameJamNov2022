@@ -25,12 +25,14 @@ public class GunBehaviour : MonoBehaviour
     void Start()
     {
         gunBase = new Pistol();
+        gunType = GunType.Pistol;
     }
 
 
     private float shootedLastTime;
     void SetGun(GunType gunType)
     {
+        this.gunType = gunType;
         switch (gunType)
         {
             case GunType.Pistol: gunBase = new Pistol(); break;
@@ -39,33 +41,52 @@ public class GunBehaviour : MonoBehaviour
             case GunType.SniperRifle: gunBase = new SniperRifle(); break;
             case GunType.Chainsaw: gunBase = new Chainsaw(); break;
             case GunType.Bazooka: gunBase = new Bazooka(); break;
-        default: break;
+            default: break;
         }
+        
     }
     // Update is called once per frame
     void Update()
     {
         shootedLastTime += Time.deltaTime;
 
+        if (gunBase.GetRoundsLeft() == 0)
+        {
+
+            int newGunType = Random.Range(1, (int)GunType.MachineGun + 1);
+            SetGun((GunType)newGunType);
+            shootedLastTime = 0.0f;
+        }
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePosition.z = 0.0f;
         GameObject shootingPoint = GameObject.Find("ShootingPoint");
         Vector3 currentPosition = shootingPoint.transform.position;
         Vector3 direction = (mousePosition - currentPosition).normalized;
-        if (Input.GetMouseButtonDown(0))
+        if (gunBase.CanShoot(shootedLastTime))
         {
-            if (gunBase.CanShoot(shootedLastTime))
+            bool isMouseProperlyClicked = false;
+            if(gunType == GunType.MachineGun || gunType == GunType.Chainsaw)
+            {
+                isMouseProperlyClicked = Input.GetMouseButton(0);
+            }
+            else
+            {
+                isMouseProperlyClicked = Input.GetMouseButtonDown(0);
+            }
+            if (isMouseProperlyClicked)
             {
                 gunBase.Shot(direction, currentPosition);
                 shootedLastTime = 0.0f;
             }
         }
+
     }
 }
 
 public abstract class GunBase : MonoBehaviour
 {
     public int clipSize;
+    public int roundsLeft;
     public bool canGoThroughEnemy;
     public int projectilesPerShot;
     public float shotCooldown;
@@ -74,6 +95,7 @@ public abstract class GunBase : MonoBehaviour
     protected GunBase(int clipSize, bool canGoThroughEnemy, int projectilesPerShot, float shotCooldown)
     {
         this.clipSize = clipSize;
+        this.roundsLeft = clipSize;
         this.canGoThroughEnemy = canGoThroughEnemy;
         this.projectilesPerShot = projectilesPerShot;
         this.shotCooldown = shotCooldown;
@@ -84,7 +106,12 @@ public abstract class GunBase : MonoBehaviour
 
     public virtual bool CanShoot(float timeElapsedFromLastShot)
     {
-        return timeElapsedFromLastShot > shotCooldown;
+        return timeElapsedFromLastShot > shotCooldown && roundsLeft > 0;
+    }
+
+    public virtual int GetRoundsLeft()
+    {
+        return roundsLeft;
     }
 }
 
@@ -96,6 +123,8 @@ public class Pistol : GunBase
     }
     public override void Shot(Vector3 direction, Vector3 shootingPointPos)
     {
+
+        roundsLeft--;
         GameObject projectile;
         projectile = Instantiate(projectileObject);
         projectile.transform.position = shootingPointPos;
@@ -114,7 +143,12 @@ public class MachineGun : GunBase
     }
     public override void Shot(Vector3 direction, Vector3 shootingPointPos)
     {
-
+        roundsLeft--;
+        GameObject projectile;
+        projectile = Instantiate(projectileObject);
+        projectile.transform.position = shootingPointPos;
+        direction.z = 0;
+        projectile.GetComponent<ProjectileBehaviour>().SetDirection(direction.normalized);
     }
 }
 
