@@ -16,6 +16,7 @@ public class MovementController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        //rb.isKinematic = true;
     }
 
     // Update is called once per frame
