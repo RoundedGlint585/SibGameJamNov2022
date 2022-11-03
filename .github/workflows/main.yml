@@ -1,0 +1,36 @@
+name: Build Project and Publish to itch.io
+on: [push]
+jobs:
+  build:
+    name: Build Project and Publish to itch.io
+    runs-on: ubuntu-latest
+    concurrency: 
+      group: unity-build
+      cancel-in-progress: true
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          lfs: true      # Cache
+      - uses: actions/cache@v2
+        with:
+          path: Library
+          key: Library          
+      - name: Build project
+        uses: game-ci/unity-builder@v2
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+        with:
+          targetPlatform: WebGL
+      - uses: actions/upload-artifact@v3
+        with:
+          name: Build
+          path: build          
+      # Upload to Itch
+      - uses: josephbmanley/butler-publish-itchio-action@master
+        env:
+          BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
+          CHANNEL: html5
+          ITCH_GAME: ENTER_GAME_NAME_HERE
+          ITCH_USER: ENTER_USER_NAME_HERE
+          PACKAGE: build/WebGL
