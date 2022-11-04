@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Xml.Serialization;
+using Unity.VisualScripting;
 using UnityEngine;
 using static GunBehaviour;
 
@@ -24,7 +25,7 @@ public class GunBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gunBase = new Pistol();
+        gunBase = transform.parent.AddComponent<Pistol>();
         gunType = GunType.Pistol;
     }
 
@@ -34,13 +35,13 @@ public class GunBehaviour : MonoBehaviour
     {
         this.gunType = gunType;
         switch (gunType)
-        {
-            case GunType.Pistol: gunBase = new Pistol(); break;
-            case GunType.MachineGun: gunBase = new MachineGun(); break;
-            case GunType.Shotgun: gunBase = new Shotgun(); break;
-            case GunType.SniperRifle: gunBase = new SniperRifle(); break;
-            case GunType.Chainsaw: gunBase = new Chainsaw(); break;
-            case GunType.Bazooka: gunBase = new Bazooka(); break;
+        { 
+            case GunType.Pistol: gunBase = transform.parent.AddComponent<Pistol>(); break;
+            case GunType.MachineGun: gunBase = transform.parent.AddComponent<MachineGun>(); break;
+            case GunType.Shotgun: gunBase = transform.parent.AddComponent<Shotgun>(); break;
+            case GunType.SniperRifle: gunBase = transform.parent.AddComponent<SniperRifle>(); break;
+            case GunType.Chainsaw: gunBase = transform.parent.AddComponent<Chainsaw>(); break;
+            case GunType.Bazooka: gunBase = transform.parent.AddComponent<Bazooka>(); break;
             default: break;
         }
         
@@ -99,8 +100,9 @@ public abstract class GunBase : MonoBehaviour
         this.canGoThroughEnemy = canGoThroughEnemy;
         this.projectilesPerShot = projectilesPerShot;
         this.shotCooldown = shotCooldown;
-        projectileObject = Resources.Load("Prefabs/Projectile") as GameObject;
+
     }
+
 
     public abstract void Shot(Vector3 direction, Vector3 shootingPointPos);
 
@@ -121,6 +123,10 @@ public class Pistol : GunBase
     {
 
     }
+    void Start()
+    {
+        projectileObject = Resources.Load("Prefabs/Projectile") as GameObject;
+    }
     public override void Shot(Vector3 direction, Vector3 shootingPointPos)
     {
 
@@ -136,7 +142,10 @@ public class Pistol : GunBase
 
 public class MachineGun : GunBase
 {
-
+    void Start()
+    {
+        projectileObject = Resources.Load("Prefabs/Projectile") as GameObject;
+    }
     public MachineGun() : base(100, false, 1, 0.01f)
     {
 

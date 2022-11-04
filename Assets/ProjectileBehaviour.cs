@@ -16,6 +16,9 @@ public class ProjectileBehaviour : MonoBehaviour
 
     private float lifeTimer = 0.0f;
 
+    [SerializeField]
+    private int damage = 50;
+
     public void SetDirection(Vector3 direction)
     {
         this.direction = direction;
@@ -24,11 +27,15 @@ public class ProjectileBehaviour : MonoBehaviour
     void Start()
     {
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+
+    private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Enemies"))
+        if (collider.gameObject.tag == "Enemy")
         {
+            maxSpeed = 0.0f;
             Destroy(gameObject);
+            collider.gameObject.GetComponent<EnemyBase>().RemoveHealth(damage);
+           
         }
     }
 

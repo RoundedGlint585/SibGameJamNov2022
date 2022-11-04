@@ -24,6 +24,8 @@ public class MovementController : MonoBehaviour
     {
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
+        Vector3 direction = new Vector3(horizontal, vertical, 0);
+        //transform.
     }
 
     private void FixedUpdate()
