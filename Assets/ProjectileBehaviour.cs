@@ -19,6 +19,10 @@ public class ProjectileBehaviour : MonoBehaviour
     [SerializeField]
     private int damage = 50;
 
+    AudioSource audioSource;
+    AudioClip wallHit;
+    AudioClip enemyHit;
+
     public void SetDirection(Vector3 direction)
     {
         this.direction = direction;
@@ -26,6 +30,11 @@ public class ProjectileBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+
+        wallHit = Resources.Load("Sounds/HitWall") as AudioClip;
+        enemyHit = Resources.Load("Sounds/HitEnemy") as AudioClip;
+
     }
 
 
@@ -34,11 +43,13 @@ public class ProjectileBehaviour : MonoBehaviour
         if(collision.gameObject.tag == "Tilemap")
         {
             Destroy(gameObject);
+            audioSource.PlayOneShot(wallHit);
         } else if (collision.gameObject.tag == "Enemy")
         {
             maxSpeed = 0.0f;
             Destroy(gameObject);
             collision.gameObject.GetComponent<EnemyBase>().RemoveHealth(damage);
+            audioSource.PlayOneShot(enemyHit);
         }
     }
     // Update is called once per frame

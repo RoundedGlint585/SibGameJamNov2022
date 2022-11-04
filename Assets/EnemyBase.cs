@@ -18,6 +18,9 @@ public abstract class EnemyBase : MonoBehaviour
     protected GameObject player;
     protected Rigidbody2D rb;
     public Sprite sprite;
+
+    protected AudioSource audioSource;
+    protected AudioClip deathSound;
     protected EnemyBase(int health, float attackCooldown, float maxSpeed, int hitStrength)
     {
         this.health = health;
@@ -31,6 +34,7 @@ public abstract class EnemyBase : MonoBehaviour
         health -= toRemove;
         if(health <= 0)
         {
+            audioSource.PlayOneShot(deathSound);
             Destroy(this.gameObject);
         }
     }

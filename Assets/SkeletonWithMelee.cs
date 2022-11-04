@@ -15,6 +15,9 @@ public class SkeletonWithMelee : EnemyBase
         levelTilemap = GameObject.FindGameObjectWithTag("Tilemap");
         player = GameObject.FindGameObjectWithTag("Player");
         rb = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();
+
+        deathSound = Resources.Load("Sounds/EnemyDeath") as AudioClip;
     }
 
     // Update is called once per frame

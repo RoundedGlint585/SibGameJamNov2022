@@ -22,26 +22,34 @@ public class GunBehaviour : MonoBehaviour
     public GunType gunType;
 
     public GunBase gunBase;
+
+    public AudioSource audioSource;
+
+    public AudioClip changeWeapon;
     // Start is called before the first frame update
     void Start()
     {
-        gunBase = transform.parent.AddComponent<Pistol>();
+        gunBase = transform.AddComponent<Pistol>();
         gunType = GunType.Pistol;
+        audioSource = GetComponent<AudioSource>();
+        changeWeapon = Resources.Load("Sounds/Puff") as AudioClip;
     }
 
 
     private float shootedLastTime;
     void SetGun(GunType gunType)
     {
+        audioSource.PlayOneShot(changeWeapon);
         this.gunType = gunType;
+        Destroy(gunBase);
         switch (gunType)
         { 
-            case GunType.Pistol: gunBase = transform.parent.AddComponent<Pistol>(); break;
-            case GunType.MachineGun: gunBase = transform.parent.AddComponent<MachineGun>(); break;
-            case GunType.Shotgun: gunBase = transform.parent.AddComponent<Shotgun>(); break;
-            case GunType.SniperRifle: gunBase = transform.parent.AddComponent<SniperRifle>(); break;
-            case GunType.Chainsaw: gunBase = transform.parent.AddComponent<Chainsaw>(); break;
-            case GunType.Bazooka: gunBase = transform.parent.AddComponent<Bazooka>(); break;
+            case GunType.Pistol: gunBase = transform.AddComponent<Pistol>(); break;
+            case GunType.MachineGun: gunBase = transform.AddComponent<MachineGun>(); break;
+            case GunType.Shotgun: gunBase = transform.AddComponent<Shotgun>(); break;
+            case GunType.SniperRifle: gunBase = transform.AddComponent<SniperRifle>(); break;
+            case GunType.Chainsaw: gunBase = transform.AddComponent<Chainsaw>(); break;
+            case GunType.Bazooka: gunBase = transform.AddComponent<Bazooka>(); break;
             default: break;
         }
         
@@ -93,9 +101,12 @@ public abstract class GunBase : MonoBehaviour
     public float shotCooldown;
     public Sprite sprite;
     public GameObject projectileObject;
+
+    public AudioClip shotSound;
+    public AudioSource audioSource;
     protected GunBase(int clipSize, bool canGoThroughEnemy, int projectilesPerShot, float shotCooldown)
     {
-        this.clipSize = clipSize;
+        this.clipSize = clipSize; 
         this.roundsLeft = clipSize;
         this.canGoThroughEnemy = canGoThroughEnemy;
         this.projectilesPerShot = projectilesPerShot;
@@ -115,6 +126,11 @@ public abstract class GunBase : MonoBehaviour
     {
         return roundsLeft;
     }
+
+    public virtual void MakeSound()
+    {
+        audioSource.PlayOneShot(shotSound);
+    }
 }
 
 public class Pistol : GunBase
@@ -126,12 +142,12 @@ public class Pistol : GunBase
     void Start()
     {
         projectileObject = Resources.Load("Prefabs/Projectile") as GameObject;
+        shotSound = Resources.Load("Sounds/Shot") as AudioClip;
+
+        audioSource = GetComponent<AudioSource>();
     }
     public override void Shot(Vector3 direction, Vector3 shootingPointPos)
     {
-
-
-
 
         roundsLeft--;
         GameObject projectile;
@@ -144,6 +160,7 @@ public class Pistol : GunBase
         Vector3 randomizedDirection = quaternion * direction;
         randomizedDirection.z = 0.0f;
         projectile.GetComponent<ProjectileBehaviour>().SetDirection(direction.normalized);
+        MakeSound();
     }
 
 }
@@ -153,6 +170,8 @@ public class MachineGun : GunBase
     void Start()
     {
         projectileObject = Resources.Load("Prefabs/Projectile") as GameObject;
+        shotSound = Resources.Load("Sounds/Shot") as AudioClip;
+        audioSource = transform.gameObject.GetComponent<AudioSource>();
     }
     public MachineGun() : base(21, false, 1, 0.2f)
     {
@@ -171,6 +190,7 @@ public class MachineGun : GunBase
         Vector3 randomizedDirection = quaternion * direction;
         randomizedDirection.z = 0.0f;
         projectile.GetComponent<ProjectileBehaviour>().SetDirection(randomizedDirection.normalized);
+        MakeSound();
     }
 }
 
