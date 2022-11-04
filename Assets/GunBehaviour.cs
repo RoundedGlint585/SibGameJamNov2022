@@ -130,11 +130,19 @@ public class Pistol : GunBase
     public override void Shot(Vector3 direction, Vector3 shootingPointPos)
     {
 
+
+
+
         roundsLeft--;
         GameObject projectile;
         projectile = Instantiate(projectileObject);
         projectile.transform.position = shootingPointPos;
         direction.z = 0;
+
+        float angle = Random.Range(-0.1f, 0.1f);
+        Quaternion quaternion = Quaternion.Euler(0, 0, angle);
+        Vector3 randomizedDirection = quaternion * direction;
+        randomizedDirection.z = 0.0f;
         projectile.GetComponent<ProjectileBehaviour>().SetDirection(direction.normalized);
     }
 
@@ -157,7 +165,12 @@ public class MachineGun : GunBase
         projectile = Instantiate(projectileObject);
         projectile.transform.position = shootingPointPos;
         direction.z = 0;
-        projectile.GetComponent<ProjectileBehaviour>().SetDirection(direction.normalized);
+
+        float angle = Random.Range(-3.0f, 3.0f);
+        Quaternion quaternion = Quaternion.Euler(0, 0, angle);
+        Vector3 randomizedDirection = quaternion * direction;
+        randomizedDirection.z = 0.0f;
+        projectile.GetComponent<ProjectileBehaviour>().SetDirection(randomizedDirection.normalized);
     }
 }
 
