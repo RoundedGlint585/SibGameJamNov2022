@@ -1,9 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class MousePositionScript : MonoBehaviour
 {
+
+    [SerializeField]
+    private float maxRadius = 5.0f;
+
+    public GameObject mainCharacter;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +21,9 @@ public class MousePositionScript : MonoBehaviour
     {
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePosition.z = 0.0f;
-        transform.position = mousePosition;
+
+        Vector3 characterPosition = mainCharacter.transform.position;
+        Vector3 direction = mousePosition - characterPosition;
+        transform.position = characterPosition + direction.normalized * maxRadius ;
     }
 }
