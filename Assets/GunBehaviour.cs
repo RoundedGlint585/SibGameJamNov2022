@@ -154,7 +154,7 @@ public class MachineGun : GunBase
     {
         projectileObject = Resources.Load("Prefabs/Projectile") as GameObject;
     }
-    public MachineGun() : base(100, false, 1, 0.01f)
+    public MachineGun() : base(21, false, 1, 0.2f)
     {
 
     }

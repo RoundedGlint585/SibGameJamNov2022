@@ -6,7 +6,10 @@ public class MousePositionScript : MonoBehaviour
 {
 
     [SerializeField]
-    private float maxRadius = 5.0f;
+    private float maxRadius = 100.0f;
+
+    [SerializeField]
+    private float minRadius = 30.0f;
 
     public GameObject mainCharacter;
     // Start is called before the first frame update
@@ -23,6 +26,15 @@ public class MousePositionScript : MonoBehaviour
 
         Vector3 characterPosition = mainCharacter.transform.position;
         Vector3 direction = mousePosition - characterPosition;
-        transform.position = characterPosition + direction.normalized * maxRadius ;
+        float length = direction.magnitude;
+        if(length > maxRadius)
+        {
+            length = maxRadius;
+        }
+        if(length < minRadius)
+        {
+            length = minRadius;
+        }
+        transform.position = characterPosition + direction.normalized * length;
     }
 }

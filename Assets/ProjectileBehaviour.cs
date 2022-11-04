@@ -28,21 +28,19 @@ public class ProjectileBehaviour : MonoBehaviour
     {
     }
 
-    private void OnTriggerEnter2D(Collider2D collider)
+
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collider.gameObject.tag == "Enemy")
+        if(collision.gameObject.tag == "Tilemap")
+        {
+            Destroy(gameObject);
+        } else if (collision.gameObject.tag == "Enemy")
         {
             maxSpeed = 0.0f;
             Destroy(gameObject);
-            collider.gameObject.GetComponent<EnemyBase>().RemoveHealth(damage);
-           
+            collision.gameObject.GetComponent<EnemyBase>().RemoveHealth(damage);
         }
     }
-
-/*    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        Destroy(gameObject);
-    }*/
     // Update is called once per frame
     void Update()
     {
