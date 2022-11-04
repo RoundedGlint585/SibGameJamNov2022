@@ -46,3 +46,6 @@ TagManager:
   - name: Player
     uniqueID: 3905038319
     locked: 0
+  - name: FrontWalls
+    uniqueID: 1454177283
+    locked: 0
