@@ -129,10 +129,12 @@ public class GunBehaviour : MonoBehaviour
         if (Vector3.Dot(lookingDirection, Vector3.right) < -0.1f)
         {
             position.x = -Mathf.Abs(position.x);
+            holdingPoint.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().flipY = true;
         }
         else if(Vector3.Dot(lookingDirection, Vector3.right) > 0.1f)
         {
             position.x = Mathf.Abs(position.x);
+            holdingPoint.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().flipY = false;
         }
         holdingPoint.transform.localPosition = position;
     }
