@@ -1667,7 +1667,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: -0.9, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1828,7 +1828,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 934161706}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: -0.9, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2104,7 +2104,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnCooldown: 1
-  enemy: {fileID: 568910897281275913, guid: 9e1e9f3ffa36e964eb5edb266393a231, type: 3}
+  enemy: {fileID: 4997215692419680208, guid: a40fe0e8e71ae514781f1be1a60027b1, type: 3}
 --- !u!4 &1601386851
 Transform:
   m_ObjectHideFlags: 0
@@ -2940,13 +2940,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainCharacter
       objectReference: {fileID: 0}
+    - target: {fileID: 6196599581358078917, guid: fc4db613503e6b64aa5ced48d86d71c1, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6196599581358078919, guid: fc4db613503e6b64aa5ced48d86d71c1, type: 3}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6196599581358078919, guid: fc4db613503e6b64aa5ced48d86d71c1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 6196599581358078919, guid: fc4db613503e6b64aa5ced48d86d71c1, type: 3}
       propertyPath: m_LocalPosition.y

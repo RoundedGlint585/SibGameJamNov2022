@@ -21,6 +21,8 @@ public abstract class EnemyBase : MonoBehaviour
 
     protected AudioSource audioSource;
     protected AudioClip deathSound;
+
+    protected Animator animator;
     protected EnemyBase(int health, float attackCooldown, float maxSpeed, int hitStrength)
     {
         this.health = health;

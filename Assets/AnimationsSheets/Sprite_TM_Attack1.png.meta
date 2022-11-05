@@ -1,17 +1,17 @@
 fileFormatVersion: 2
-guid: cd1cc94143e4405458f0d58d56e10bb7
+guid: fcddffc85c9ff554f9fe9d102d3277f3
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
-    mipMapMode: 1
+    mipMapMode: 0
     enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
-    borderMipMap: 1
-    mipMapsPreserveCoverage: 1
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
     alphaTestReferenceValue: 0.5
     mipMapFadeDistanceStart: 1
     mipMapFadeDistanceEnd: 3
@@ -33,8 +33,8 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
-    aniso: 2
+    filterMode: 0
+    aniso: 1
     mipBias: 0
     wrapU: 1
     wrapV: 1
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 600
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -69,7 +69,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -128,13 +128,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TileMap(bad)_0
+      name: Sprite_TM_Attack1_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 96
-        width: 32
-        height: 32
+        y: 2500
+        width: 2500
+        height: 2500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,20 +142,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b3ca98836f8821e48bedc8f199244355
-      internalID: 882729072
+      spriteID: 74f415fd0c1a74245a563e6237b16f1d
+      internalID: 711572609
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileMap(bad)_1
+      name: Sprite_TM_Attack1_1
       rect:
         serializedVersion: 2
-        x: 32
-        y: 96
-        width: 32
-        height: 32
+        x: 2500
+        y: 2500
+        width: 2500
+        height: 2500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,20 +163,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9a02c74051d2454429d75b49568d7a67
-      internalID: 787739663
+      spriteID: f26397db4b18aa24586c351ca6dca0e9
+      internalID: 131524860
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileMap(bad)_2
+      name: Sprite_TM_Attack1_2
       rect:
         serializedVersion: 2
-        x: 64
-        y: 96
-        width: 32
-        height: 32
+        x: 5000
+        y: 2500
+        width: 2500
+        height: 2500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,20 +184,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 59e436b676d537848b1fe09a414e3213
-      internalID: -146215108
+      spriteID: 1331f685d07c0d941865e0f14d21b7d9
+      internalID: 268340137
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileMap(bad)_3
+      name: Sprite_TM_Attack1_3
       rect:
         serializedVersion: 2
-        x: 96
-        y: 96
-        width: 32
-        height: 32
+        x: 7500
+        y: 2500
+        width: 2500
+        height: 2500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -205,188 +205,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 163353da08960bf47aee8c67ea1dab2c
-      internalID: -759840155
+      spriteID: 3d1dd9eded3ff794ab926c4672399f8b
+      internalID: 2129991812
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileMap(bad)_4
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: eba5efc515f395445bf62fa66c673253
-      internalID: 1242889977
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TileMap(bad)_5
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 09749741d2e63484fa4944cb2bd6bec7
-      internalID: -1974771844
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TileMap(bad)_6
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 76e35afef6a777b4db8cac1dbff2d9a2
-      internalID: -1682767561
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TileMap(bad)_7
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3ac1be9fac681994aaac37ff13a2215d
-      internalID: -2142462101
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TileMap(bad)_8
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 05fe196bee29bbb4bab3b58b123c626e
-      internalID: 305133195
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TileMap(bad)_9
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a110d1850d85d184d9701a947d8f6a18
-      internalID: -579543424
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TileMap(bad)_10
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ff5594d6f1ae9a74ead1cbee3f94687c
-      internalID: -686993896
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TileMap(bad)_11
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4ff8e174d76214341a476c0b6576dfb7
-      internalID: -1128168345
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TileMap(bad)_12
+      name: Sprite_TM_Attack1_4
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 32
+        width: 2500
+        height: 2500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -394,20 +226,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 118726896f7995f42abccc123ac165ce
-      internalID: 1231231754
+      spriteID: 2c9a547d47ec97d479cbb252fd681167
+      internalID: 805725714
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileMap(bad)_13
+      name: Sprite_TM_Attack1_5
       rect:
         serializedVersion: 2
-        x: 32
+        x: 2500
         y: 0
-        width: 32
-        height: 32
+        width: 2500
+        height: 2500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -415,20 +247,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4a4db633f38fe83488a09709cf083b2f
-      internalID: -1772971961
+      spriteID: b002afbf0af69c94db59813b8d630300
+      internalID: -1803407714
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileMap(bad)_14
+      name: Sprite_TM_Attack1_6
       rect:
         serializedVersion: 2
-        x: 64
+        x: 5000
         y: 0
-        width: 32
-        height: 32
+        width: 2500
+        height: 2500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -436,20 +268,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6984b6df18b91214288b05afed3ca970
-      internalID: 869791747
+      spriteID: 0ad233507fcd84d43af67939b4275f45
+      internalID: -725763741
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileMap(bad)_15
+      name: Sprite_TM_Attack1_7
       rect:
         serializedVersion: 2
-        x: 96
+        x: 7500
         y: 0
-        width: 32
-        height: 32
+        width: 2500
+        height: 2500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -457,8 +289,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3dc1ed9bf4c304c478120d29171fc7c9
-      internalID: 2124108770
+      spriteID: d885000813896b34db6d323d804c9c8e
+      internalID: 2050130633
       vertices: []
       indices: 
       edges: []
@@ -474,22 +306,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      TileMap(bad)_3: -759840155
-      TileMap(bad)_13: -1772971961
-      TileMap(bad)_11: -1128168345
-      TileMap(bad)_15: 2124108770
-      TileMap(bad)_12: 1231231754
-      TileMap(bad)_1: 787739663
-      TileMap(bad)_8: 305133195
-      TileMap(bad)_9: -579543424
-      TileMap(bad)_5: -1974771844
-      TileMap(bad)_6: -1682767561
-      TileMap(bad)_0: 882729072
-      TileMap(bad)_4: 1242889977
-      TileMap(bad)_2: -146215108
-      TileMap(bad)_7: -2142462101
-      TileMap(bad)_14: 869791747
-      TileMap(bad)_10: -686993896
+      Sprite_TM_Attack1_3: 2129991812
+      Sprite_TM_Attack1_1: 131524860
+      Sprite_TM_Attack1_4: 805725714
+      Sprite_TM_Attack1_0: 711572609
+      Sprite_TM_Attack1_6: -725763741
+      Sprite_TM_Attack1_5: -1803407714
+      Sprite_TM_Attack1_7: 2050130633
+      Sprite_TM_Attack1_2: 268340137
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
