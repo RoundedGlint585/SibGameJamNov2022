@@ -1713,8 +1713,12 @@ PrefabInstance:
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4756111453886342861, guid: 59e7e7600c74cad48afb134d074d89b8, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4756111453886342861, guid: 59e7e7600c74cad48afb134d074d89b8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 29.099976
+      value: 68
       objectReference: {fileID: 0}
     - target: {fileID: 4756111453886342861, guid: 59e7e7600c74cad48afb134d074d89b8, type: 3}
       propertyPath: m_ConstrainProportionsScale
@@ -1739,6 +1743,14 @@ PrefabInstance:
     - target: {fileID: 5105249929568686045, guid: 59e7e7600c74cad48afb134d074d89b8, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5105249929568686045, guid: 59e7e7600c74cad48afb134d074d89b8, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -28
+      objectReference: {fileID: 0}
+    - target: {fileID: 5105249929568686045, guid: 59e7e7600c74cad48afb134d074d89b8, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 68
       objectReference: {fileID: 0}
     - target: {fileID: 5105249929568686045, guid: 59e7e7600c74cad48afb134d074d89b8, type: 3}
       propertyPath: m_ConstrainProportionsScale
@@ -1829,8 +1841,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6210481431766087347, guid: 59e7e7600c74cad48afb134d074d89b8, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 519420031}
+    - target: {fileID: 6210481431766087347, guid: 59e7e7600c74cad48afb134d074d89b8, type: 3}
       propertyPath: m_RenderMode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6210481431766087348, guid: 59e7e7600c74cad48afb134d074d89b8, type: 3}
       propertyPath: m_UiScaleMode
