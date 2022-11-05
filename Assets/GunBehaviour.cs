@@ -37,7 +37,7 @@ public class GunBehaviour : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         changeWeapon = Resources.Load("Sounds/Puff") as AudioClip;
         holdingPoint = transform.GetChild(0).gameObject;
-        scopePoint = holdingPoint.transform.GetChild(0).gameObject;
+        scopePoint = holdingPoint.transform.GetChild(0).transform.GetChild(0).gameObject;
     }
 
 
@@ -126,17 +126,22 @@ public class GunBehaviour : MonoBehaviour
 
         Vector3 position = holdingPoint.transform.localPosition;
         Vector3 lookingDirection = scopePoint.transform.position - holdingPoint.transform.position;
+        Vector3 scopePointPosition = scopePoint.transform.localPosition;
+        float dotProduct = Vector3.Dot(lookingDirection, Vector3.right);
         if (Vector3.Dot(lookingDirection, Vector3.right) < -0.1f)
         {
             position.x = -Mathf.Abs(position.x);
             holdingPoint.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().flipY = true;
+            scopePointPosition.y = -Mathf.Abs(scopePointPosition.y);
         }
         else if(Vector3.Dot(lookingDirection, Vector3.right) > 0.1f)
         {
             position.x = Mathf.Abs(position.x);
             holdingPoint.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().flipY = false;
+            scopePointPosition.y = Mathf.Abs(scopePointPosition.y);
         }
         holdingPoint.transform.localPosition = position;
+        scopePoint.transform.localPosition = scopePointPosition;
     }
 }
 
