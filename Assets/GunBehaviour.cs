@@ -111,7 +111,7 @@ public class GunBehaviour : MonoBehaviour
     {
         Vector3 lookingDirection = scopePoint.transform.position - holdingPoint.transform.position;
         SpriteRenderer renderer = holdingPoint.transform.GetChild(0).GetComponent<SpriteRenderer>();
-        if(Vector3.Dot(lookingDirection, Vector3.up) < 0.0f)
+        if(Vector3.Dot(lookingDirection, Vector3.up) < 0.1f)
         {
             renderer.sortingOrder = 2;
         }
@@ -128,7 +128,7 @@ public class GunBehaviour : MonoBehaviour
         Vector3 lookingDirection = scopePoint.transform.position - holdingPoint.transform.position;
         Vector3 scopePointPosition = scopePoint.transform.localPosition;
         float dotProduct = Vector3.Dot(lookingDirection, Vector3.right);
-        if (Vector3.Dot(lookingDirection, Vector3.right) < -0.1f)
+        if (Vector3.Dot(lookingDirection, Vector3.right) < -0.2f)
         {
             position.x = -Mathf.Abs(position.x);
             holdingPoint.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().flipY = true;
