@@ -13,10 +13,12 @@ public class MovementController : MonoBehaviour
 
     Rigidbody2D rb;
     // Start is called before the first frame update
+
+    Animator animator;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        //rb.isKinematic = true;
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -25,7 +27,31 @@ public class MovementController : MonoBehaviour
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
         Vector3 direction = new Vector3(horizontal, vertical, 0);
-        //transform.
+        if (Input.GetKey(KeyCode.S))
+        {
+            animator.SetTrigger("WalkDown");
+        }
+        else if (Input.GetKey(KeyCode.W) && !(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)))
+        {
+            animator.SetTrigger("WalkUp");
+        }
+        else if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
+        {
+            animator.SetTrigger("WalkLeftUp");
+        }
+        else if (Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.D))
+        {
+            animator.SetTrigger("WalkRightUp");
+        }
+        else if (Input.GetKey(KeyCode.A))
+        {
+            animator.SetTrigger("WalkLeft");
+        }
+        else if (Input.GetKey(KeyCode.D))
+        {
+            animator.SetTrigger("WalkRight");
+        }
+
     }
 
     private void FixedUpdate()
