@@ -23,6 +23,7 @@ public abstract class EnemyBase : MonoBehaviour
     protected AudioClip deathSound;
 
     protected Animator animator;
+    public FlashScript flashScript;
     protected EnemyBase(int health, float attackCooldown, float maxSpeed, int hitStrength)
     {
         this.health = health;
@@ -34,6 +35,7 @@ public abstract class EnemyBase : MonoBehaviour
     public void RemoveHealth(int toRemove)
     {
         health -= toRemove;
+        flashScript.Flash();
         if(health <= 0)
         {
             audioSource.PlayOneShot(deathSound);
