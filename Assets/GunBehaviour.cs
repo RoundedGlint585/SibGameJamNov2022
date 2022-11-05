@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using Unity.VisualScripting;
@@ -91,6 +91,7 @@ public class GunBehaviour : MonoBehaviour
             {
                 gunBase.Shot(direction, currentPosition);
                 shootedLastTime = 0.0f;
+                Debug.Log(gunBase.GetRoundsMax());
             }
         }
 
@@ -150,8 +151,8 @@ public abstract class GunBase : MonoBehaviour
     public AudioSource audioSource;
     protected GunBase(int clipSize, bool canGoThroughEnemy, int projectilesPerShot, float shotCooldown)
     {
-        this.clipSize = clipSize; 
-        this.roundsLeft = clipSize;
+        this.clipSize = clipSize; // количество в магазине всего
+        this.roundsLeft = clipSize;  // сколько осталось
         this.canGoThroughEnemy = canGoThroughEnemy;
         this.projectilesPerShot = projectilesPerShot;
         this.shotCooldown = shotCooldown;
@@ -166,9 +167,14 @@ public abstract class GunBase : MonoBehaviour
         return timeElapsedFromLastShot > shotCooldown && roundsLeft > 0;
     }
 
-    public virtual int GetRoundsLeft()
+    public virtual int GetRoundsLeft() //кол. оставшихся
     {
         return roundsLeft;
+    }
+
+    public virtual int GetRoundsMax() //кол. патронов всего
+    {
+        return clipSize;
     }
 
     public virtual void MakeSound()
