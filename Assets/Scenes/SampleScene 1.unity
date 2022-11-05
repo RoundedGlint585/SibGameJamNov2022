@@ -1424,6 +1424,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6196599580031674684, guid: fc4db613503e6b64aa5ced48d86d71c1, type: 3}
+      propertyPath: m_Color.b
+      value: 0.15977213
+      objectReference: {fileID: 0}
+    - target: {fileID: 6196599580031674684, guid: fc4db613503e6b64aa5ced48d86d71c1, type: 3}
+      propertyPath: m_Color.g
+      value: 0.15977213
+      objectReference: {fileID: 0}
+    - target: {fileID: 6196599580031674684, guid: fc4db613503e6b64aa5ced48d86d71c1, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8301887
+      objectReference: {fileID: 0}
+    - target: {fileID: 6196599580031674684, guid: fc4db613503e6b64aa5ced48d86d71c1, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6196599580366801866, guid: fc4db613503e6b64aa5ced48d86d71c1, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6196599581358078912, guid: fc4db613503e6b64aa5ced48d86d71c1, type: 3}
       propertyPath: m_Name
       value: MainCharacter

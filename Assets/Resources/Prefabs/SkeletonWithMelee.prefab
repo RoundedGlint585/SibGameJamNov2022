@@ -186,7 +186,7 @@ MonoBehaviour:
   maxSpeed: 2
   hitStrength: 10
   sprite: {fileID: 0}
-  flashScript: {fileID: 7626230847392732759}
+  flashScript: {fileID: 0}
 --- !u!82 &8369300661201803673
 AudioSource:
   m_ObjectHideFlags: 0

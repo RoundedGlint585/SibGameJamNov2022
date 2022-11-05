@@ -26,6 +26,9 @@ public class GunBehaviour : MonoBehaviour
     public AudioSource audioSource;
 
     public AudioClip changeWeapon;
+
+    public GameObject scopePoint;
+    public GameObject holdingPoint;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +36,8 @@ public class GunBehaviour : MonoBehaviour
         gunType = GunType.Pistol;
         audioSource = GetComponent<AudioSource>();
         changeWeapon = Resources.Load("Sounds/Puff") as AudioClip;
+        holdingPoint = transform.GetChild(0).gameObject;
+        scopePoint = holdingPoint.transform.GetChild(0).gameObject;
     }
 
 
@@ -58,7 +63,7 @@ public class GunBehaviour : MonoBehaviour
     void Update()
     {
         shootedLastTime += Time.deltaTime;
-
+        GunMovement();
         if (gunBase.GetRoundsLeft() == 0)
         {
 
@@ -90,6 +95,46 @@ public class GunBehaviour : MonoBehaviour
         }
 
     }
+
+    private void GunMovement() {
+        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 currentPosition = holdingPoint.transform.position;
+        Vector3 direction = -(mousePosition - currentPosition);
+        float angle = Mathf.Atan2(-direction.y, -direction.x) * Mathf.Rad2Deg;
+        transform.GetChild(0).transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        FlippingUpdate();
+        VisibilityUpdate();
+    }
+
+    private void VisibilityUpdate() 
+    {
+        Vector3 lookingDirection = scopePoint.transform.position - holdingPoint.transform.position;
+        SpriteRenderer renderer = holdingPoint.transform.GetChild(0).GetComponent<SpriteRenderer>();
+        if(Vector3.Dot(lookingDirection, Vector3.up) < 0.0f)
+        {
+            renderer.sortingOrder = 2;
+        }
+        else
+        {
+            renderer.sortingOrder = 0;
+        }
+    }
+
+    private void FlippingUpdate()
+    {
+
+        Vector3 position = holdingPoint.transform.localPosition;
+        Vector3 lookingDirection = scopePoint.transform.position - holdingPoint.transform.position;
+        if (Vector3.Dot(lookingDirection, Vector3.right) < -0.1f)
+        {
+            position.x = -Mathf.Abs(position.x);
+        }
+        else if(Vector3.Dot(lookingDirection, Vector3.right) > 0.1f)
+        {
+            position.x = Mathf.Abs(position.x);
+        }
+        holdingPoint.transform.localPosition = position;
+    }
 }
 
 public abstract class GunBase : MonoBehaviour
@@ -99,7 +144,6 @@ public abstract class GunBase : MonoBehaviour
     public bool canGoThroughEnemy;
     public int projectilesPerShot;
     public float shotCooldown;
-    public Sprite sprite;
     public GameObject projectileObject;
 
     public AudioClip shotSound;

@@ -18,6 +18,7 @@ public class SkeletonWithMelee : EnemyBase
         audioSource = GetComponent<AudioSource>();
 
         deathSound = Resources.Load("Sounds/EnemyDeath") as AudioClip;
+        flashScript = gameObject.GetComponent<FlashScript>();
     }
 
     // Update is called once per frame
