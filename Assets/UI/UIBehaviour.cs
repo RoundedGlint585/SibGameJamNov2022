@@ -78,6 +78,7 @@ public class UIBehaviour : MonoBehaviour
             case 6:
                 weaponImage.GetComponent<Image>().sprite = weaponSprite[gunType];
                 break;
+
         }
     }
 }
