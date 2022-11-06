@@ -269,7 +269,7 @@ MonoBehaviour:
   direction: {x: 0, y: 0, z: 0}
   maxSpeed: 8
   maxLifeTime: 100
-  damage: 50
+  damage: 1
 --- !u!1 &7245159037030806540
 GameObject:
   m_ObjectHideFlags: 0

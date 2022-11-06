@@ -287,6 +287,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4997215692419680207, guid: a40fe0e8e71ae514781f1be1a60027b1, type: 3}
+      propertyPath: health
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4997215692419680208, guid: a40fe0e8e71ae514781f1be1a60027b1, type: 3}
       propertyPath: m_Name
       value: TentacleEnemy (4)
@@ -6995,6 +6999,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1527059333}
     m_Modifications:
+    - target: {fileID: -7302726078091400355, guid: cdba30f8e9414f14a9347c56aec94e8c, type: 3}
+      propertyPath: health
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4997215692419680204, guid: cdba30f8e9414f14a9347c56aec94e8c, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -7099,6 +7107,10 @@ PrefabInstance:
     - target: {fileID: 4997215692419680204, guid: a40fe0e8e71ae514781f1be1a60027b1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4997215692419680207, guid: a40fe0e8e71ae514781f1be1a60027b1, type: 3}
+      propertyPath: health
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4997215692419680208, guid: a40fe0e8e71ae514781f1be1a60027b1, type: 3}
       propertyPath: m_Name
@@ -7282,6 +7294,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4997215692419680207, guid: a40fe0e8e71ae514781f1be1a60027b1, type: 3}
+      propertyPath: health
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4997215692419680208, guid: a40fe0e8e71ae514781f1be1a60027b1, type: 3}
       propertyPath: m_Name
       value: TentacleEnemy (1)
@@ -7342,6 +7358,10 @@ PrefabInstance:
     - target: {fileID: 4997215692419680204, guid: a40fe0e8e71ae514781f1be1a60027b1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4997215692419680207, guid: a40fe0e8e71ae514781f1be1a60027b1, type: 3}
+      propertyPath: health
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4997215692419680208, guid: a40fe0e8e71ae514781f1be1a60027b1, type: 3}
       propertyPath: m_Name
@@ -7621,6 +7641,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2012113458}
     m_Modifications:
+    - target: {fileID: -7302726078091400355, guid: cdba30f8e9414f14a9347c56aec94e8c, type: 3}
+      propertyPath: health
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4997215692419680204, guid: cdba30f8e9414f14a9347c56aec94e8c, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -7726,6 +7750,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4997215692419680207, guid: a40fe0e8e71ae514781f1be1a60027b1, type: 3}
+      propertyPath: health
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4997215692419680208, guid: a40fe0e8e71ae514781f1be1a60027b1, type: 3}
       propertyPath: m_Name
       value: TentacleEnemy (3)
@@ -7786,6 +7814,10 @@ PrefabInstance:
     - target: {fileID: 4997215692419680204, guid: a40fe0e8e71ae514781f1be1a60027b1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4997215692419680207, guid: a40fe0e8e71ae514781f1be1a60027b1, type: 3}
+      propertyPath: health
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4997215692419680208, guid: a40fe0e8e71ae514781f1be1a60027b1, type: 3}
       propertyPath: m_Name
@@ -7960,6 +7992,10 @@ PrefabInstance:
     - target: {fileID: 4997215692419680204, guid: a40fe0e8e71ae514781f1be1a60027b1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4997215692419680207, guid: a40fe0e8e71ae514781f1be1a60027b1, type: 3}
+      propertyPath: health
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4997215692419680208, guid: a40fe0e8e71ae514781f1be1a60027b1, type: 3}
       propertyPath: m_Name
@@ -8300,6 +8336,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2012113458}
     m_Modifications:
+    - target: {fileID: -7302726078091400355, guid: cdba30f8e9414f14a9347c56aec94e8c, type: 3}
+      propertyPath: health
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4997215692419680204, guid: cdba30f8e9414f14a9347c56aec94e8c, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -8553,6 +8593,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2012113458}
     m_Modifications:
+    - target: {fileID: -7302726078091400355, guid: cdba30f8e9414f14a9347c56aec94e8c, type: 3}
+      propertyPath: health
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4997215692419680204, guid: cdba30f8e9414f14a9347c56aec94e8c, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -8614,6 +8658,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2010599584}
     m_Modifications:
+    - target: {fileID: -7302726078091400355, guid: cdba30f8e9414f14a9347c56aec94e8c, type: 3}
+      propertyPath: health
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4997215692419680204, guid: cdba30f8e9414f14a9347c56aec94e8c, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -8765,6 +8813,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1317073821}
     m_Modifications:
+    - target: {fileID: -7302726078091400355, guid: cdba30f8e9414f14a9347c56aec94e8c, type: 3}
+      propertyPath: health
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4997215692419680204, guid: cdba30f8e9414f14a9347c56aec94e8c, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -8910,6 +8962,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2057219818}
     m_Modifications:
+    - target: {fileID: -7302726078091400355, guid: cdba30f8e9414f14a9347c56aec94e8c, type: 3}
+      propertyPath: health
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4997215692419680204, guid: cdba30f8e9414f14a9347c56aec94e8c, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -9067,6 +9123,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4997215692419680207, guid: a40fe0e8e71ae514781f1be1a60027b1, type: 3}
+      propertyPath: health
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4997215692419680208, guid: a40fe0e8e71ae514781f1be1a60027b1, type: 3}
       propertyPath: m_Name
       value: TentacleEnemy
@@ -9084,6 +9144,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 609819261}
     m_Modifications:
+    - target: {fileID: -7302726078091400355, guid: cdba30f8e9414f14a9347c56aec94e8c, type: 3}
+      propertyPath: health
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4997215692419680204, guid: cdba30f8e9414f14a9347c56aec94e8c, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -9145,6 +9209,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2010599584}
     m_Modifications:
+    - target: {fileID: -7302726078091400355, guid: cdba30f8e9414f14a9347c56aec94e8c, type: 3}
+      propertyPath: health
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4997215692419680204, guid: cdba30f8e9414f14a9347c56aec94e8c, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -35679,6 +35747,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1527059333}
     m_Modifications:
+    - target: {fileID: -7302726078091400355, guid: cdba30f8e9414f14a9347c56aec94e8c, type: 3}
+      propertyPath: health
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4997215692419680204, guid: cdba30f8e9414f14a9347c56aec94e8c, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -35740,6 +35812,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1317073821}
     m_Modifications:
+    - target: {fileID: -7302726078091400355, guid: cdba30f8e9414f14a9347c56aec94e8c, type: 3}
+      propertyPath: health
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4997215692419680204, guid: cdba30f8e9414f14a9347c56aec94e8c, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -35845,6 +35921,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4997215692419680207, guid: a40fe0e8e71ae514781f1be1a60027b1, type: 3}
+      propertyPath: health
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4997215692419680208, guid: a40fe0e8e71ae514781f1be1a60027b1, type: 3}
       propertyPath: m_Name
       value: TentacleEnemy
@@ -35862,6 +35942,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1932834850}
     m_Modifications:
+    - target: {fileID: -7302726078091400355, guid: cdba30f8e9414f14a9347c56aec94e8c, type: 3}
+      propertyPath: health
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4997215692419680204, guid: cdba30f8e9414f14a9347c56aec94e8c, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -36115,6 +36199,14 @@ PrefabInstance:
     - target: {fileID: 8637263722841969534, guid: fc4db613503e6b64aa5ced48d86d71c1, type: 3}
       propertyPath: m_EdgeRadius
       value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8637263722841969535, guid: fc4db613503e6b64aa5ced48d86d71c1, type: 3}
+      propertyPath: health
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8637263722841969535, guid: fc4db613503e6b64aa5ced48d86d71c1, type: 3}
+      propertyPath: healthMax
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc4db613503e6b64aa5ced48d86d71c1, type: 3}
