@@ -88,6 +88,11 @@ public class GunBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (GameObject.FindGameObjectWithTag("Player").GetComponent<MovementController>().isGameFreezed)
+        {
+            return;
+        }
         shootedLastTime += Time.deltaTime;
         GunMovement();
         if (gunBase.GetRoundsLeft() == 0)

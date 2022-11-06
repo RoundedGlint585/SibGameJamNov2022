@@ -16,6 +16,7 @@ public class MovementController : MonoBehaviour
     // Start is called before the first frame update
     bool isDeathAnimationPlayed = false;
     Animator animator;
+    public bool isGameFreezed = false;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -25,6 +26,10 @@ public class MovementController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isGameFreezed)
+        {
+            return;
+        }
         bool isDead = GetComponent<LifeController>().IsDead();
         if (!isDead)
         {
