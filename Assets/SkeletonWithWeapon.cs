@@ -46,6 +46,8 @@ public class SkeletonWithWeapon : EnemyBase
 
         destinationLocation = transform.position;
         modifiedProjectileAttackCooldown = projectileAttackCooldown + Random.Range(0.0f, 1.0f); //
+
+        flashScript = gameObject.GetComponent<FlashScript>();
     }
 
     // Update is called once per frame
