@@ -13,8 +13,10 @@ public class UIBehaviour : MonoBehaviour
 
     [SerializeField] private int hpCount;
     [SerializeField] private List<Image> hpImageList;
+    [SerializeField] private List<Sprite> weaponSprite;
 
     [SerializeField] private GameObject EnemyHPBar;
+    [SerializeField] private GameObject weaponImage;
 
     // Start is called before the first frame update
     void Start()
@@ -37,7 +39,7 @@ public class UIBehaviour : MonoBehaviour
         ammoCountText.text = gunBeh.gunBase.GetRoundsLeft().ToString();
     }
 
-    public void UpdateHPCount(int currentHealthCount) 
+    public void UpdateHPCount(int currentHealthCount)
     {
         Debug.Log("Current HP" + currentHealthCount.ToString());
         int hpImageIndex = currentHealthCount;
@@ -49,9 +51,33 @@ public class UIBehaviour : MonoBehaviour
             return;
 
         if (hpImageList[hpImageIndex].enabled)
-            hpImageList [hpImageIndex].enabled = false;
+            hpImageList[hpImageIndex].enabled = false;
         else
             hpImageList[hpImageIndex].enabled = false;
     }
 
+    public void SetCurrentWeaponSprite(int gunType)
+    {
+        switch (gunType)
+        {
+            case 1:
+                weaponImage.GetComponent<Image>().sprite = weaponSprite[gunType];
+                break;
+            case 2:
+                weaponImage.GetComponent<Image>().sprite = weaponSprite[gunType];
+                break;
+            case 3:
+                weaponImage.GetComponent<Image>().sprite = weaponSprite[gunType];
+                break;
+            case 4:
+                weaponImage.GetComponent<Image>().sprite = weaponSprite[gunType];
+                break;
+            case 5:
+                weaponImage.GetComponent<Image>().sprite = weaponSprite[gunType];
+                break;
+            case 6:
+                weaponImage.GetComponent<Image>().sprite = weaponSprite[gunType];
+                break;
+        }
+    }
 }
