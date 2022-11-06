@@ -29,6 +29,9 @@ public class GunBehaviour : MonoBehaviour
 
     public GameObject scopePoint;
     public GameObject holdingPoint;
+
+    private UIBehaviour UIRef; // ссылка на UI для доступа к оружию
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +41,8 @@ public class GunBehaviour : MonoBehaviour
         changeWeapon = Resources.Load("Sounds/Puff") as AudioClip;
         holdingPoint = transform.GetChild(0).gameObject;
         scopePoint = holdingPoint.transform.GetChild(0).transform.GetChild(0).gameObject;
+
+        UIRef = GameObject.Find("UI_Main").GetComponentInChildren<UIBehaviour>();//
     }
 
 
@@ -50,11 +55,11 @@ public class GunBehaviour : MonoBehaviour
         switch (gunType)
         { 
             case GunType.Pistol: gunBase = transform.AddComponent<Pistol>(); break;
-            case GunType.MachineGun: gunBase = transform.AddComponent<MachineGun>(); break;
-            case GunType.Shotgun: gunBase = transform.AddComponent<Shotgun>(); break;
-            case GunType.SniperRifle: gunBase = transform.AddComponent<SniperRifle>(); break;
-            case GunType.Chainsaw: gunBase = transform.AddComponent<Chainsaw>(); break;
-            case GunType.Bazooka: gunBase = transform.AddComponent<Bazooka>(); break;
+            case GunType.MachineGun: gunBase = transform.AddComponent<MachineGun>();  break;
+            case GunType.Shotgun: gunBase = transform.AddComponent<Shotgun>();  break;
+            case GunType.SniperRifle: gunBase = transform.AddComponent<SniperRifle>();  break;
+            case GunType.Chainsaw: gunBase = transform.AddComponent<Chainsaw>();  break;
+            case GunType.Bazooka: gunBase = transform.AddComponent<Bazooka>();  break;
             default: break;
         }
         
@@ -69,6 +74,7 @@ public class GunBehaviour : MonoBehaviour
 
             int newGunType = Random.Range(1, (int)GunType.MachineGun + 1);
             SetGun((GunType)newGunType);
+            UIRef.SetCurrentWeaponSprite(newGunType);
             shootedLastTime = 0.0f;
         }
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
