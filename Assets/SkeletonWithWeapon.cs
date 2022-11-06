@@ -48,6 +48,8 @@ public class SkeletonWithWeapon : EnemyBase
         modifiedProjectileAttackCooldown = projectileAttackCooldown + Random.Range(0.0f, 1.0f); //
 
         flashScript = gameObject.GetComponent<FlashScript>();
+
+        //animator.SetTrigger("Walk");
     }
 
     // Update is called once per frame
@@ -81,7 +83,7 @@ public class SkeletonWithWeapon : EnemyBase
     {
         if (!player.GetComponent<LifeController>().IsDead() && lastTimeProjectileAttacked > modifiedProjectileAttackCooldown)
         {
-            animator.SetTrigger("..."); // добавить название тригера
+            //animator.SetTrigger("Walk"); // добавить название тригера
             lastTimeProjectileAttacked = 0.0f;
             modifiedProjectileAttackCooldown = projectileAttackCooldown + Random.Range(-2.0f, 1.0f); // задаем новый кулдаун с рандомным отклонением
             StartCoroutine(SpawnProjectile()); // запускаем спавн снарядов
@@ -136,6 +138,7 @@ public class SkeletonWithWeapon : EnemyBase
         //if (distanceToPlayer < modifiedDesirableDistance + Random.Range(0.0f, 2.0f)) // останавливается если подходит близко
         {
             movementDirection = movementDirection * 0.0f;
+            //animator.SetTrigger("Idle");
         }
         Vector3 movementTowardsPlayer = movementDirection.normalized * step;
 

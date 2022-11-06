@@ -14,7 +14,9 @@ public class SpawnerBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        GameObject enemyObj = Instantiate(enemy);
+        enemyObj.transform.position = transform.position;
+        lastTimeSpawned = 0.0f;
     }
 
     // Update is called once per frame
