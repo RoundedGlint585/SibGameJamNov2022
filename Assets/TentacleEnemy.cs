@@ -44,6 +44,7 @@ public class TentacleEnemy : EnemyBase
         projectileObj = Resources.Load("Prefabs/HostileProjectileBehaviour") as GameObject; 
 
         animator = GetComponent<Animator>();
+        flashScript = gameObject.GetComponent<FlashScript>();
     }
 
     // Update is called once per frame
