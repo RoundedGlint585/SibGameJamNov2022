@@ -261,7 +261,7 @@ public class MachineGun : GunBase
         shotSound = Resources.Load("Sounds/Shot") as AudioClip;
         audioSource = transform.gameObject.GetComponent<AudioSource>();
     }
-    public MachineGun() : base(21, false, 1, 0.2f)
+    public MachineGun() : base(21, false, 1, 0.1f)
     {
 
     }
