@@ -50,6 +50,11 @@ public class TentacleEnemy : EnemyBase
     // Update is called once per frame
     void Update()
     {
+
+        if (GameObject.FindGameObjectWithTag("Player").GetComponent<MovementController>().isGameFreezed)
+        {
+            return;
+        }
         lastTimeAttacked += Time.deltaTime;
         lastTimeProjectileAttacked += Time.deltaTime;
         Move();

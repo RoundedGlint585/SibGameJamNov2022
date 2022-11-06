@@ -242,6 +242,10 @@ MonoBehaviour:
   changeWeapon: {fileID: 0}
   scopePoint: {fileID: 0}
   holdingPoint: {fileID: 0}
+  scopePointPistolPosition: {x: 3.93, y: 1.36, z: 0}
+  scopePointSubMachineGunPosition: {x: 0, y: 0, z: 0}
+  pistol: {fileID: 21300000, guid: 2622f8f12e3ec7543bb0ca629db6ce08, type: 3}
+  subMachineGun: {fileID: 21300000, guid: 4beb26face234ca468c4b82a825079fd, type: 3}
 --- !u!82 &8637263722061959050
 AudioSource:
   m_ObjectHideFlags: 0

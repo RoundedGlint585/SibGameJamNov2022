@@ -55,6 +55,11 @@ public class ProjectileBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (GameObject.FindGameObjectWithTag("Player").GetComponent<MovementController>().isGameFreezed)
+        {
+            return;
+        }
         lifeTimer += Time.deltaTime;
         if(lifeTimer > maxLifeTime)
         {

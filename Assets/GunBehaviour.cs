@@ -32,10 +32,19 @@ public class GunBehaviour : MonoBehaviour
 
     private UIBehaviour UIRef; // ссылка на UI для доступа к оружию
 
+    [SerializeField]
+    private Vector3 scopePointPistolPosition;
+
+    [SerializeField]
+    private Vector3 scopePointSubMachineGunPosition;
+
+    public Sprite pistol;
+    public Sprite subMachineGun;
     // Start is called before the first frame update
     void Start()
     {
         gunBase = transform.AddComponent<Pistol>();
+        transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().sprite = pistol;
         gunType = GunType.Pistol;
         audioSource = GetComponent<AudioSource>();
         changeWeapon = Resources.Load("Sounds/Puff") as AudioClip;
@@ -54,8 +63,20 @@ public class GunBehaviour : MonoBehaviour
         Destroy(gunBase);
         switch (gunType)
         { 
-            case GunType.Pistol: gunBase = transform.AddComponent<Pistol>(); break;
-            case GunType.MachineGun: gunBase = transform.AddComponent<MachineGun>();  break;
+            case GunType.Pistol: { 
+                    gunBase = transform.AddComponent<Pistol>();
+                    transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().sprite = pistol;
+                    transform.GetChild(0).GetChild(0).GetChild(0).localPosition = scopePointPistolPosition;
+                    scopePoint = transform.GetChild(0).GetChild(0).GetChild(0).gameObject;
+                    break; 
+                }
+            case GunType.MachineGun: { 
+                    gunBase = transform.AddComponent<MachineGun>();
+                    transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().sprite = subMachineGun;
+                    transform.GetChild(0).GetChild(0).GetChild(0).localPosition = scopePointPistolPosition;
+                    scopePoint = transform.GetChild(0).GetChild(0).GetChild(0).gameObject;
+                    break; 
+                }
             case GunType.Shotgun: gunBase = transform.AddComponent<Shotgun>();  break;
             case GunType.SniperRifle: gunBase = transform.AddComponent<SniperRifle>();  break;
             case GunType.Chainsaw: gunBase = transform.AddComponent<Chainsaw>();  break;
@@ -67,6 +88,11 @@ public class GunBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (GameObject.FindGameObjectWithTag("Player").GetComponent<MovementController>().isGameFreezed)
+        {
+            return;
+        }
         shootedLastTime += Time.deltaTime;
         GunMovement();
         if (gunBase.GetRoundsLeft() == 0)
