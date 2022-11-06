@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class MovementController : MonoBehaviour
@@ -27,30 +28,66 @@ public class MovementController : MonoBehaviour
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
         Vector3 direction = new Vector3(horizontal, vertical, 0);
-        if (Input.GetKey(KeyCode.S))
+
+        /*        if (Input.GetKey(KeyCode.S))
+                {
+                    animator.SetTrigger("WalkDown");
+                }
+                else if (Input.GetKey(KeyCode.W) && !(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)))
+                {
+                    animator.SetTrigger("WalkUp");
+                }
+                else if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
+                {
+                    animator.SetTrigger("WalkLeftUp");
+                }
+                else if (Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.D))
+                {
+                    animator.SetTrigger("WalkRightUp");
+                }
+                else if (Input.GetKey(KeyCode.A))
+                {
+                    animator.SetTrigger("WalkLeft");
+                }
+                else if (Input.GetKey(KeyCode.D))
+                {
+                    animator.SetTrigger("WalkRight");
+                }*/
+        UpdateRotation();
+    }
+
+    void UpdateRotation()
+    {
+        float upMovementDegree = 15.0f;
+        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mousePosition.z = 0.0f;
+        Vector3 lookingDirection = mousePosition - transform.position;
+        float angleToUpVector = Vector3.Angle(lookingDirection, Vector3.up);
+        bool isLeftHalfCircle = Vector3.Dot(lookingDirection, Vector3.right) < 0.0f;
+        bool isLookingCloseToUp = angleToUpVector < 20.0f;
+        bool isLookingDiagonally = angleToUpVector < 60.0f && angleToUpVector >= 20.0f;
+        bool isLookingLeftRight = angleToUpVector < 135.0f && angleToUpVector >= 60.0f;
+        string halfCircleSide = isLeftHalfCircle ? "Left" : "Right";
+        
+        bool isMovementButtonPressed = Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.A);
+        string modifier = isMovementButtonPressed ? "Walk" : "Idle";
+        animator.SetTrigger(modifier);
+        if (isLookingCloseToUp)
         {
-            animator.SetTrigger("WalkDown");
+            animator.SetTrigger(modifier + "Up");
         }
-        else if (Input.GetKey(KeyCode.W) && !(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)))
+        else if (isLookingDiagonally)
         {
-            animator.SetTrigger("WalkUp");
-        }
-        else if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
+            animator.SetTrigger(modifier + halfCircleSide + "Up");
+        }else if (isLookingLeftRight)
         {
-            animator.SetTrigger("WalkLeftUp");
+            animator.SetTrigger(modifier  + halfCircleSide);
         }
-        else if (Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.D))
+        else
         {
-            animator.SetTrigger("WalkRightUp");
+            animator.SetTrigger(modifier + "Down");
         }
-        else if (Input.GetKey(KeyCode.A))
-        {
-            animator.SetTrigger("WalkLeft");
-        }
-        else if (Input.GetKey(KeyCode.D))
-        {
-            animator.SetTrigger("WalkRight");
-        }
+        
 
     }
 

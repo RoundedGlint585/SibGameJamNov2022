@@ -91,7 +91,6 @@ public class GunBehaviour : MonoBehaviour
             {
                 gunBase.Shot(direction, currentPosition);
                 shootedLastTime = 0.0f;
-                Debug.Log(gunBase.GetRoundsMax());
             }
         }
 
