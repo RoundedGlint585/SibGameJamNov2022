@@ -38,7 +38,7 @@ public class TentacleEnemy : EnemyBase
         levelTilemap = GameObject.FindGameObjectWithTag("Tilemap");
         player = GameObject.FindGameObjectWithTag("Player");
         rb = GetComponent<Rigidbody2D>();
-        audioSource = GetComponent<AudioSource>();
+        audioSource = GameObject.FindGameObjectWithTag("Player").GetComponent<AudioSource>();
 
         deathSound = Resources.Load("Sounds/EnemyDeath") as AudioClip;
         projectileObj = Resources.Load("Prefabs/HostileProjectileBehaviour") as GameObject; 
