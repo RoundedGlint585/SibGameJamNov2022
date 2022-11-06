@@ -74,8 +74,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.6603774, g: 0.58156556, b: 0.12771448, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 4e5ed5f293627974eb9da093792b657d, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -94,12 +94,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7245159036830770260}
-  - component: {fileID: 7245159036830770266}
   - component: {fileID: 8939810401508074331}
   - component: {fileID: 5118268829091528680}
   - component: {fileID: 7332459862197742006}
+  - component: {fileID: 4310562129946784816}
   m_Layer: 0
-  m_Name: Projectile
+  m_Name: HostileProjSlime
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -114,29 +114,13 @@ Transform:
   m_GameObject: {fileID: 7245159036830770263}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_LocalScale: {x: 0.07, y: 0.07, z: 0.07}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7245159036434235373}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7245159036830770266
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7245159036830770263}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b0b01014cdca6c4ea3fc8a620de8748, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  direction: {x: 0, y: 0, z: 0}
-  maxSpeed: 10
-  maxLifeTime: 100
-  damage: 1
 --- !u!58 &8939810401508074331
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -270,6 +254,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4310562129946784816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7245159036830770263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3de65484857548c4e9993d6342d0b79b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  direction: {x: 0, y: 0, z: 0}
+  maxSpeed: 4
+  maxLifeTime: 100
+  damage: 1
 --- !u!1 &7245159037030806540
 GameObject:
   m_ObjectHideFlags: 0
@@ -296,8 +296,8 @@ Transform:
   m_GameObject: {fileID: 7245159037030806540}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 10}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7245159036434235373}
   m_RootOrder: 0
@@ -344,7 +344,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 0.1
+  m_Time: 0.02
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -352,29 +352,20 @@ TrailRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.28659597
-        value: 0.320881
+        time: 0.28861013
+        value: 0.079639524
         inSlope: 0
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.9798387
-        value: 0.12719297
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.8207547, g: 0.59006745, b: 0.19744569, a: 1}
+      key0: {r: 0.735849, g: 0.2110359, b: 0.2110359, a: 1}
       key1: {r: 1, g: 1, b: 1, a: 0}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}

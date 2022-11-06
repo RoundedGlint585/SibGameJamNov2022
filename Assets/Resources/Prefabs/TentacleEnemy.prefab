@@ -62,7 +62,7 @@ MonoBehaviour:
   projectileConeCount: 5
   coneSpreadSize: 10
   projectileSpawnDelay: 0.05
-  projectileObj: {fileID: 7245159036830770263, guid: d8c56fc6c30857544a4d2ca384df6c59, type: 3}
+  projectileObj: {fileID: 7245159036830770263, guid: 1974fca071121cc46aff0fb3d36d7727, type: 3}
   projectileOffset: 0.6
   desirableDistance: 3
 --- !u!212 &4997215692419680206
