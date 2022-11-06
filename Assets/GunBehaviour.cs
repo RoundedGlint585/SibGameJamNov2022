@@ -111,7 +111,7 @@ public class GunBehaviour : MonoBehaviour
     {
         Vector3 lookingDirection = scopePoint.transform.position - holdingPoint.transform.position;
         SpriteRenderer renderer = holdingPoint.transform.GetChild(0).GetComponent<SpriteRenderer>();
-        if(Vector3.Dot(lookingDirection, Vector3.up) < 0.1f)
+        if(Vector3.Dot(lookingDirection, Vector3.up) < 0.4f)
         {
             renderer.sortingOrder = 2;
         }
