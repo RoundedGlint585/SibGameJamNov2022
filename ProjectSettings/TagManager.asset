@@ -7,6 +7,8 @@ TagManager:
   - Enemy
   - Tilemap
   - Door
+  - SpawnBox
+  - Boss
   layers:
   - Default
   - TransparentFX
@@ -49,4 +51,7 @@ TagManager:
     locked: 0
   - name: FrontWalls
     uniqueID: 1454177283
+    locked: 0
+  - name: UIRender
+    uniqueID: 1087117179
     locked: 0
