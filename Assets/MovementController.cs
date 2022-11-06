@@ -14,7 +14,7 @@ public class MovementController : MonoBehaviour
 
     Rigidbody2D rb;
     // Start is called before the first frame update
-
+    bool isDeathAnimationPlayed = false;
     Animator animator;
     void Start()
     {
@@ -25,39 +25,33 @@ public class MovementController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        horizontal = Input.GetAxisRaw("Horizontal");
-        vertical = Input.GetAxisRaw("Vertical");
-        Vector3 direction = new Vector3(horizontal, vertical, 0);
-
-        /*        if (Input.GetKey(KeyCode.S))
-                {
-                    animator.SetTrigger("WalkDown");
-                }
-                else if (Input.GetKey(KeyCode.W) && !(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)))
-                {
-                    animator.SetTrigger("WalkUp");
-                }
-                else if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
-                {
-                    animator.SetTrigger("WalkLeftUp");
-                }
-                else if (Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.D))
-                {
-                    animator.SetTrigger("WalkRightUp");
-                }
-                else if (Input.GetKey(KeyCode.A))
-                {
-                    animator.SetTrigger("WalkLeft");
-                }
-                else if (Input.GetKey(KeyCode.D))
-                {
-                    animator.SetTrigger("WalkRight");
-                }*/
+        bool isDead = GetComponent<LifeController>().IsDead();
+        if (!isDead)
+        {
+            horizontal = Input.GetAxisRaw("Horizontal");
+            vertical = Input.GetAxisRaw("Vertical");
+            Vector3 direction = new Vector3(horizontal, vertical, 0);
+        }
         UpdateRotation();
     }
 
     void UpdateRotation()
     {
+        bool isDead = GetComponent<LifeController>().IsDead();
+        if (isDead)
+        {
+            if (isDeathAnimationPlayed)
+            {
+                return;
+            }
+            else
+            {
+                animator.SetBool("Death", true);
+                animator.SetTrigger("TriggerDeath");
+                transform.GetChild(1).gameObject.SetActive(false);
+                isDeathAnimationPlayed = true;
+            }
+        }
         float upMovementDegree = 15.0f;
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePosition.z = 0.0f;
@@ -71,7 +65,6 @@ public class MovementController : MonoBehaviour
         
         bool isMovementButtonPressed = Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.A);
         string modifier = isMovementButtonPressed ? "Walk" : "Idle";
-        animator.SetTrigger(modifier);
         if (isLookingCloseToUp)
         {
             animator.SetTrigger(modifier + "Up");
@@ -93,6 +86,10 @@ public class MovementController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(horizontal * speed, vertical * speed);
+        bool isDead = GetComponent<LifeController>().IsDead();
+        if (!isDead)
+        {
+            rb.velocity = new Vector2(horizontal * speed, vertical * speed);
+        }
     }
 }
