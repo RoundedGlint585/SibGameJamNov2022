@@ -30,7 +30,7 @@ public class ProjectileBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
+        audioSource = GameObject.FindGameObjectWithTag("Player").GetComponent<AudioSource>(); ;
 
         wallHit = Resources.Load("Sounds/HitWall") as AudioClip;
         enemyHit = Resources.Load("Sounds/HitEnemy") as AudioClip;
@@ -42,14 +42,14 @@ public class ProjectileBehaviour : MonoBehaviour
     {
         if(collision.gameObject.tag == "Tilemap")
         {
-            Destroy(gameObject);
             audioSource.PlayOneShot(wallHit);
+            Destroy(gameObject);
         } else if (collision.gameObject.tag == "Enemy")
         {
             maxSpeed = 0.0f;
-            Destroy(gameObject);
             collision.gameObject.GetComponent<EnemyBase>().RemoveHealth(damage);
             audioSource.PlayOneShot(enemyHit);
+            Destroy(gameObject);
         }
     }
     // Update is called once per frame
